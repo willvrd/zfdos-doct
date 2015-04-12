@@ -1,3 +1,1 @@
-# zfdos-doct
-
-William LAP : Listo
+LAP = Listo
