@@ -20,6 +20,22 @@ return array(
                     ),
                 ),
             ),
+            /*
+            'crud' => array(
+                'type' => 'segment',
+                'options' => array(
+                    'route' => '/crud[/[:action][/:id]]',
+                    'constraints' => array(
+                         'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        ),
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Crud',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
+            
+            */
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -40,6 +56,7 @@ return array(
                         'type'    => 'Segment',
                         'options' => array(
                             'route'    => '/[:controller[/:action]]',
+                            'route'    => '/[:controller[/:action][/:id]]',// Agrego Parametro cualquiera
                             'constraints' => array(
                                 'controller' => '[a-zA-Z][a-zA-Z0-9_-]*',
                                 'action'     => '[a-zA-Z][a-zA-Z0-9_-]*',
@@ -73,7 +90,9 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Pruebas' => 'Application\Controller\PruebasController',
+            'Application\Controller\Crud' => 'Application\Controller\CrudController'
         ),
     ),
     'view_manager' => array(

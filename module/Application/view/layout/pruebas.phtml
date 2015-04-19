@@ -1,0 +1,39 @@
+<?php //Cargamos el doctype que tenemos configurado
+    echo $this->doctype(); ?>
+<html lang="es_ES">
+    <head>
+        <?php
+        //Cargamos el juego de caracteres
+        echo $this->headMeta()->setCharset('utf8')?>
+        <?php
+        //Asignamos el titulo de la página
+        echo $this->headTitle($this->title)?>
+        <?php //echo $this->headMeta()->appendName('keywords', 'framework, PHP, productivity');?>
+        <?php //echo $this->headMeta()->setProperty('og:title', 'my article title');?>
+        <?php //echo $this->headMeta()->setProperty('og:type', 'article');?>  
+        <?php
+        //Asignamos hojas de estilo
+       // echo $this->headLink()->prependStylesheet($this->basePath().'/css/estilos.css')?>
+        <?php //echo $this->headStyle()?>
+        <?php
+        //Incluimos ficheros javascript
+        echo $this->headScript()->prependFile($this->basePath().'/js/jquery.min.js')?>
+    </head>
+    <body>
+        <header>
+            <h1>Encabezado</h1>
+        </header>
+        <div class="content">
+
+            Saludo : <?php
+             //Mostramos el parámetro pasado
+            echo $this->saludo?>
+            <?php
+            //Aqui se muestra el contenido de la vista
+            echo $this->content?>
+        </div>
+        <footer>&copy; Victor Robles</footer>
+        <?php echo $this->inlineScript() ?>
+    </body>
+</html>
+
